@@ -1,25 +1,28 @@
-import logo from './logo.svg';
+import React, {useEffect, useState} from 'react';
 import './App.css';
+import {BrowserRouter, Link, Route, Routes} from 'react-router-dom';
+
+import ProductCatalog from "./Components/Catalog/Retail/ProductCatalog";
+import Header from "./Components/Header/Header";
+import WholesaleProductCatalog from "./Components/Catalog/Wholesale/WholesaleProductCatalog";
+import Home from "./Components/Home/Home";
+import Footer from "./Components/Footer/Footer"; // Подключите файл стилей, если необходимо
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (<BrowserRouter>
+        <div className="App">
+            <Header/>
+
+            <Routes>
+                <Route path='/' element={<Home/>}/>
+                <Route path='/wholesale' element={<WholesaleProductCatalog/>}/>
+                <Route path='/catalog' element={<ProductCatalog/>}/>
+            </Routes>
+            <Footer />
+        </div>
+
+    </BrowserRouter>);
 }
 
 export default App;
