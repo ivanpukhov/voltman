@@ -1,78 +1,99 @@
-import React, { useState } from 'react';
-
-const PriceInput = ({ label, value, min, max, onChange }) => {
-    const [timeoutId, setTimeoutId] = useState(null);
-
-    const handleChange = (newValue) => {
-        if (timeoutId) {
-            clearTimeout(timeoutId);
-        }
-
-        const newTimeoutId = setTimeout(() => {
-            onChange(newValue);
-        }, 150);
-
-        setTimeoutId(newTimeoutId);
-    };
-
-    return (
-        <>
-            <label>{label}</label>
-            <input
-                type="number"
-                placeholder={label}
-                value={value || ''}
-                onChange={e => handleChange(e.target.value)}
-            />
-            <input
-                type="range"
-                min={min}
-                max={max}
-                value={value || 0}
-                onChange={e => handleChange(e.target.value)}
-            />
-        </>
-    );
-};
-const options_retail_price = [23000,30500,36000,59500,82500,25000,31500,32500,37000,42500,62000,86500,25500,64000,49000,98000,27500,29000,35000,43500,22000,28000,41500,53000,56500,58000,65000,79000,91000,99000,123500,146000,68000,60000,82000,145000,189000]
+import React, { useState, useRef } from 'react';
 
 const findMinMax = options_retail_price => {
-    if (!Array.isArray(options_retail_price) || !options_retail_price.length) {
-        return { min: null, max: null };
-    }
     const minValue = Math.min(...options_retail_price);
     const maxValue = Math.max(...options_retail_price);
     return { minValue, maxValue };
 };
-const PriceFilter = ({  selectedValue, onFilterChange }) => {
-    const handlePriceChange = (type, value) => {
-        onFilterChange(type, value);
+
+const PriceFilter = ({ selectedValue, onFilterChange }) => {
+    const options_retail_price = [23000, 30500, 36000, 59500, 82500, 25000, 31500, 32500, 37000, 42500, 62000, 86500, 25500, 64000, 49000, 98000, 27500, 29000, 35000, 43500, 22000, 28000, 41500, 53000, 56500, 58000, 65000, 79000, 91000, 99000, 123500, 146000, 68000, 60000, 82000, 145000, 189000];
+    const { minValue, maxValue } = findMinMax(options_retail_price);
+
+    const [values, setValues] = useState([
+        selectedValue.min_retail_price || minValue,
+        selectedValue.max_retail_price || maxValue
+    ]);
+    const sliderRef = useRef(null);
+
+    const handlePriceChange = (newValues) => {
+        onFilterChange('min_retail_price', newValues[0]);
+        onFilterChange('max_retail_price', newValues[1]);
     };
 
+    const handleMouseDown = (e, index) => {
+        const moveListener = (event) => {
+            const rect = sliderRef.current.getBoundingClientRect();
+            let newPercent = ((event.clientX - rect.left) / rect.width) * 100;
+            newPercent = Math.min(Math.max(newPercent, 0), 100);
 
-    const { minValue, maxValue } = Array.isArray(options_retail_price) && options_retail_price.length
-        ? findMinMax(options_retail_price)
-        : { minValue: null, maxValue: null };
+            const newValue = Math.round((newPercent * (maxValue - minValue) / 100) + minValue);
+            const newValues = [...values];
+            newValues[index] = newValue;
 
-    const minForMaxSlider = selectedValue.min_retail_price || 0;
+            if (index === 0) {
+                newValues[1] = Math.max(newValues[1], newValue);
+            } else {
+                newValues[0] = Math.min(newValues[0], newValue);
+            }
+
+            setValues(newValues);
+            handlePriceChange(newValues);
+        };
+
+        document.addEventListener('mousemove', moveListener);
+        document.addEventListener('mouseup', () => {
+            document.removeEventListener('mousemove', moveListener);
+        });
+    };
 
     return (
         <div>
-            <label>Цена: </label>
-            <PriceInput
-                label="Мин."
-                value={selectedValue.min_retail_price}
-                min={minValue}
-                max={maxValue}
-                onChange={value => handlePriceChange('min_retail_price', value)}
-            />
-            <PriceInput
-                label="Макс."
-                value={selectedValue.max_retail_price}
-                min={minForMaxSlider}
-                max={maxValue}
-                onChange={value => handlePriceChange('max_retail_price', value)}
-            />
+            <label className='filters__title'>Цена: </label>
+            <div className="filters__price">
+                <input
+                    type="text"
+                    value={values[0]}
+
+                    onChange={(e) => {
+                        const newValues = [Number(e.target.value), values[1]];
+                        setValues(newValues);
+                        handlePriceChange(newValues);
+                    }}
+                />
+                <input
+                    type="text"
+                    value={values[1]}
+                    onChange={(e) => {
+                        const newValues = [values[0], Number(e.target.value)];
+                        setValues(newValues);
+                        handlePriceChange(newValues);
+                    }}
+                />
+            </div>
+            <div className="slider-price" ref={sliderRef}>
+                <div
+                    className="track"
+                    style={{
+                        left: `${(values[0] - minValue) / (maxValue - minValue) * 100}%`,
+                        width: `${(values[1] - values[0]) / (maxValue - minValue) * 100}%`
+                    }}
+                ></div>
+                <div
+                    className="thumb"
+                    style={{
+                        left: `${(values[0] - minValue) / (maxValue - minValue) * 100}%`
+                    }}
+                    onMouseDown={(e) => handleMouseDown(e, 0)}
+                ></div>
+                <div
+                    className="thumb"
+                    style={{
+                        left: `${(values[1] - minValue) / (maxValue - minValue) * 100}%`
+                    }}
+                    onMouseDown={(e) => handleMouseDown(e, 1)}
+                ></div>
+            </div>
         </div>
     );
 };

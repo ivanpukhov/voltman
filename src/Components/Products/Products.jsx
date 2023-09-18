@@ -6,7 +6,7 @@ const Products = ({products}) => {
     return (
         <div>
             {products.length === 0 ? (
-                <div>Товары не найдены</div>
+                <div className='noneproduct'>Ой, такого нет :(</div>
             ) : (
                 <div className="products">
 

@@ -1,0 +1,137 @@
+.bproducts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 26px;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.bproduct {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 630px;
+    height: 288px;
+    padding: 30px;
+    border-radius: 10px;
+    background: #FFF;
+}
+
+.bproduct__photo img {
+    width: 228px;
+    height: 228px;
+    flex-shrink: 0;
+}
+
+.bproduct__content {
+    width: 299px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.bproduct__title {
+    color: #000;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.bproduct__price {
+    color: #000;
+    font-family: Inter;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.bproduct__is {
+    color: #000;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.bproduct__is::before {
+    content: url("assets/img/aviable.svg");
+    margin-right: 9px;
+}
+
+.bproduct__btn {
+    width: 258px;
+    height: 56px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid #FFF200;
+    background: #FFF200;
+    color: #000;
+    font-family: Gotham Pro;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+@media (max-width: 1279px) {
+
+    .bproduct {
+        max-width: 341px;
+        width: 100%;
+        height: 167px;
+        flex-shrink: 0;
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+    }
+
+    .bproduct__photo img {
+        width: 129px;
+        height: 129px;
+        flex-shrink: 0;
+    }
+
+    .bproduct__content {
+        width: 157px;
+
+    }
+
+    .bproduct__title {
+        color: #000;
+        font-family: Inter;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
+
+    .bproduct__price {
+        color: #000;
+        font-family: Inter;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+
+    .bproduct__is {
+        color: #000;
+        font-family: Inter;
+        font-size: 10px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    .bproduct__btn {
+        width: 157px;
+        height: 46px;
+        flex-shrink: 0;
+        font-size: 12px;
+    }
+}

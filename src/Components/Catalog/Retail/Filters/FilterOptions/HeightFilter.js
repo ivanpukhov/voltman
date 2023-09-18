@@ -24,6 +24,7 @@ const HeightFilter = ({ options, selectedValue, onFilterChange }) => {
                 onChange={handleHeightChange}
                 options={selectOptions}
                 classNamePrefix="custom-select"
+                placeholder='Высота'
             />
         </div>
     );

@@ -24,6 +24,8 @@ const WeightFilter = ({ options, selectedValue, onFilterChange }) => {
                 onChange={handleWeightChange}
                 options={selectOptions}
                 classNamePrefix="custom-select"
+                placeholder='Высота'
+
             />
         </div>
     );

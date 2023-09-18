@@ -24,6 +24,8 @@ const LengthFilter = ({ options, selectedValue, onFilterChange }) => {
                 onChange={handleLengthChange}
                 options={selectOptions}
                 classNamePrefix="custom-select"
+                placeholder='Длина'
+
             />
         </div>
     );

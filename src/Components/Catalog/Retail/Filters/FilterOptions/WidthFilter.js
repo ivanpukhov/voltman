@@ -23,6 +23,7 @@ const WidthFilter = ({ options, selectedValue, onFilterChange }) => {
                 value={selectedOption}
                 onChange={handleWidthChange}
                 options={selectOptions}
+                placeholder="Ширина"
                 classNamePrefix="custom-select"
             />
         </div>

@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import axios from "axios";
-import Products from "../Products/Products";
+import BestProducts from "../BestProducts/BestProducts";
 import Actions from "./Actions/Actions";
 import Reviews from "./Reviews/Reviews";
 import about from '../../assets/img/about.svg'
@@ -8,6 +8,14 @@ import link from '../../assets/img/link.svg'
 import zhumabaev from '../../assets/img/shops/shop__zhumabaev.svg'
 import {Link} from "react-router-dom";
 import s from "../../App.module.css";
+import Find from "./Find/Find";
+
+function Df() {
+return(
+    <Find />
+
+)
+}
 
 const Home = () => {
     const [products, setProducts] = useState([]);
@@ -29,61 +37,8 @@ const Home = () => {
         <>
             <div className="container">
 
-                <div className="menu">
-                    <div className="menu__item menu__active">Каталог</div>
-                    <div className="menu__item">Акции</div>
-                    <div className="menu__item">Блог</div>
-                    <div className="menu__item">Контакты</div>
-                </div>
-                <div className="df">
-                    <div className="findBattery">
-                        <div className="findBattery_title">
-                            Найдите свой <br/>
-                            аккумулятор
-                        </div>
-                        <div className="findBattery_subtitle">
-                            Подбери аккумулятор для своей машины
-                        </div>
-                        <div className="findBattery__form">
-                            <input
-                                type="text"
-                                className="findBattery__input"
-                                placeholder="Тип автомобиля"
-                            />
-                            <input
-                                type="text"
-                                className="findBattery__input"
-                                placeholder="Марка"
-                            />
-                            <input
-                                type="text"
-                                className="findBattery__input"
-                                placeholder="Марка"
-                            />
-                            <input
-                                type="text"
-                                className="findBattery__input"
-                                placeholder="Тип топлива"
-                            />
-                        </div>
-                        <div className="findBattery__btn">Найти</div>
-                    </div>
-                    <div className="bannerBox">
-                        <div className="banner baner-yellow">
-                            <div className="banner__title">Помочь подобрать аккумулятор?</div>
-                            <div className="banner__subtitle">
-                                Оставте заявку мы вам перезвоним!
-                            </div>
-                            <div className="banner__btn">Оставить заявку</div>
-                        </div>
-                        <div className="banner banner-white">
-                            <div className="banner__title">
-                                Спец. условия для оргнаниций и <br/> тендоров
-                            </div>
-                            <div className="banner__btn">Смотреть условия</div>
-                        </div>
-                    </div>
-                </div>
+
+                <Df />
                 <div className="productSelect">
                     <div className="productSelect__title">
                         В <span style={{color: "#FFF200"}}>Voltman</span> аккумуляторы можно
@@ -104,9 +59,11 @@ const Home = () => {
                     <div className="bestProduct__subtitle">
                         Аккумуляторы для легковых автомобилей
                     </div>
-                    <Products products={products}/>
+                    <BestProducts products={products}/>
                 </div>
                 <Actions/>
+                <a name='action'></a>
+
                 <Reviews/>
 
                 <div className="about">
@@ -205,8 +162,10 @@ const Home = () => {
                         </div>
                         <div className="map__btn">Перейти на Я.Карты</div>
                     </div>
+
                 </div>
             </div>
+            <a name='map'></a>
             <div className="container">
                 <div className="block__title">Наши магазины в Петропавловске</div>
                 <div className="shops">

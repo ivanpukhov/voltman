@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CategoryFilter = ({ options, selectedValue, onFilterChange }) => {
+const CategoryFilter = ({ options, classname, selectedValue, onFilterChange }) => {
     if (!options) {
         return null;
     }
@@ -11,7 +11,7 @@ const CategoryFilter = ({ options, selectedValue, onFilterChange }) => {
     };
 
     return (
-        <div className="categor">
+        <div  className={classname}>
             <div>
                 <input
                     id="all-categories"
@@ -24,18 +24,21 @@ const CategoryFilter = ({ options, selectedValue, onFilterChange }) => {
                 <label htmlFor="all-categories">Все</label>
             </div>
             {options.map(option => (
-                <div key={option.id}>
-                    <input
-                        id={`category-${option.id}`}
-                        type="checkbox"
-                        value={option.id}
-                        checked={selectedValue === option.id}
-                        onChange={() => handleCategoryChange({ target: { value: option.id } })}
-                        className="dn"
-                    />
-                    <label htmlFor={`category-${option.id}`}>{option.name}</label>
-                </div>
+                option.name !== "EFB Технология" && (
+                    <div key={option.id}>
+                        <input
+                            id={`category-${option.id}`}
+                            type="checkbox"
+                            value={option.id}
+                            checked={selectedValue === option.id}
+                            onChange={() => handleCategoryChange({ target: { value: option.id } })}
+                            className="dn"
+                        />
+                        <label htmlFor={`category-${option.id}`}>{option.name}</label>
+                    </div>
+                )
             ))}
+
         </div>
     );
 };
