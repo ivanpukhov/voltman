@@ -141,7 +141,6 @@ const Cart = () => {
                         {alertMessage}
                     </div>
                     <button className='order__create-btn' onClick={closeAlertModal}>Закрыть</button>
-
                 </div>
             </div>
         </Modal>
