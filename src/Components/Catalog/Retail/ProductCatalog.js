@@ -6,12 +6,14 @@ import CategoryFilter from "./Filters/FilterOptions/CategoryFilter";
 import SortFilter from "./Filters/FilterOptions/SortFilter";
 import Modal from "react-modal";
 import xx from "../../../assets/img/xx.svg";
+import ClipLoader from "react-spinners/ClipLoader";
 
 const ProductCatalog = () => {
     const [products, setProducts] = useState([]);
     const [filterOptions, setFilterOptions] = useState({});
     const [selectedFilters, setSelectedFilters] = useState({});
     const [selectedSort, setSelectedSort] = useState(null);
+    const [isLoading, setIsLoading] = useState(false);
 
 
     useEffect(() => {
@@ -19,6 +21,7 @@ const ProductCatalog = () => {
     }, [selectedFilters, selectedSort]);
 
     const fetchProducts = async () => {
+        setIsLoading(true); // начало загрузки
         try {
             const params = {...selectedFilters};
             if (selectedSort) {
@@ -41,6 +44,8 @@ const ProductCatalog = () => {
             });
         } catch (error) {
             console.error('Error fetching products:', error);
+        } finally {
+            setIsLoading(false); // окончание загрузки
         }
     };
 
@@ -61,25 +66,18 @@ const ProductCatalog = () => {
     const closeModal = () => setIsModalOpen(false);
 
     return (<>
-            <div className="container">
-                <div className="catalog__title">Аккумуляторы для автомобилей в розницу</div>
 
-            </div>
-            <div className="container-catalog">
 
-                <Modal isOpen={isModalOpen} onRequestClose={closeModal}>
-                    <div onClick={closeModal} className='closeFiltersModal'>
-                        <img src={xx} alt=""/>
-                    </div>
-                    <Filters
-                        filterOptions={filterOptions}
-                        selectedFilters={selectedFilters}
-                        onFilterChange={handleFilterChange}
-                        onResetFilters={handleResetFilters}
-                        selectedSort={selectedSort}
-                        onSortChange={setSelectedSort}
-                    />
-                </Modal>
+        <div className="container">
+            <div className="catalog__title">Аккумуляторы для автомобилей в розницу</div>
+
+        </div>
+        <div className="container-catalog">
+
+            <Modal isOpen={isModalOpen} onRequestClose={closeModal}>
+                <div onClick={closeModal} className='closeFiltersModal'>
+                    <img src={xx} alt=""/>
+                </div>
                 <Filters
                     filterOptions={filterOptions}
                     selectedFilters={selectedFilters}
@@ -87,29 +85,43 @@ const ProductCatalog = () => {
                     onResetFilters={handleResetFilters}
                     selectedSort={selectedSort}
                     onSortChange={setSelectedSort}
-                    isMobile='filterPc'
                 />
-                <div className="prcont">
+            </Modal>
+            <Filters
+                filterOptions={filterOptions}
+                selectedFilters={selectedFilters}
+                onFilterChange={handleFilterChange}
+                onResetFilters={handleResetFilters}
+                selectedSort={selectedSort}
+                onSortChange={setSelectedSort}
+                isMobile='filterPc'
+            />
+            <div className="prcont">
 
-                    <CategoryFilter
-                        options={filterOptions.categories}
-                        selectedValue={selectedFilters.category_id}
-                        onFilterChange={handleFilterChange}
-                        classname="categor"
+                <CategoryFilter
+                    options={filterOptions.categories}
+                    selectedValue={selectedFilters.category_id}
+                    onFilterChange={handleFilterChange}
+                    classname="categor"
 
-                        // options_retail_price={options_retail_price}
-                    />
-                    <div className="filt">
-                        <button className="mobile-filter-button" onClick={openModal}>
-                            Фильтры
-                        </button>
-                        <SortFilter selectedSort={selectedSort} onSortChange={setSelectedSort}/>
-                    </div>
-
-                    <Products products={products}/>
+                    // options_retail_price={options_retail_price}
+                />
+                <div className="filt">
+                    <button className="mobile-filter-button" onClick={openModal}>
+                        Фильтры
+                    </button>
+                    <SortFilter selectedSort={selectedSort} onSortChange={setSelectedSort}/>
                 </div>
+                {isLoading ? (
+                    <ClipLoader color={"#bc9412"} size={50} />
+                ) : (
+                <Products products={products}/>
+                    )}
             </div>
-        </>);
+        </div>
+
+
+    </>);
 };
 
 export default ProductCatalog;

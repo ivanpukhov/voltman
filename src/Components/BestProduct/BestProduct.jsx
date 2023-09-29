@@ -14,7 +14,7 @@ const BestProduct = ({product}) => {
 
         <div key={product.id} className={s.bproduct}>
             <div className={s.bproduct__photo}>
-                <img src={'http://localhost:3001' + product.photo} alt={product.model} alt=""/>
+                <img src={product.photo} alt={product.model} alt=""/>
             </div>
             <div className={s.bproduct__content}>
                 <div className={s.bproduct__title}>{product.model}</div>

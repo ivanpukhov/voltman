@@ -44,9 +44,9 @@ const Footer = () =>(
                         <div className="footer__btn">Обратный звонок</div>
                     </div>
                     <div className="footer__adress">
-                        пр. Абая, 138/2, уг. ул. Тургута Озала (рядом с ЖК "Гаухар Тас")
+                        Улица Ярослава Гашека, 27
                     </div>
-                    <div className="footer__mail">info@voltman.kz</div>
+                    <div className="footer__mail">info@voltman.ix-web.site</div>
                 </div>
             </div>
             <div className="footer__bottom">

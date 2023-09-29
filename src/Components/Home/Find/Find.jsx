@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { data } from './data';  // Подразумевается, что data.js находится в той же директории
+import { data } from './data';
+import Consolt from "../../Consult";
+import {Link} from "react-router-dom";  // Подразумевается, что data.js находится в той же директории
 
 const VehicleForm = () => {
     const [vehicleType, setVehicleType] = useState('');
@@ -37,47 +39,47 @@ const VehicleForm = () => {
                 </div>
                 <form className='findBattery__form'>
                     <select onChange={handleVehicleTypeChange} className='findBattery__input' value={vehicleType}>
-                        <option value="" disabled>Select Vehicle Type</option>
+                        <option value="" >Выберите тип автомобиля</option>
                         {vehicleTypes.map((type, index) => (
                             <option key={index} value={type}>{type}</option>
                         ))}
                     </select>
 
                     <select onChange={handleBrandChange} className='findBattery__input' value={brand} disabled={!vehicleType}>
-                        <option value="" disabled>Select Brand</option>
+                        <option value="" >Марка автомобиля</option>
                         {brands.map((brand, index) => (
                             <option key={index} value={brand}>{brand}</option>
                         ))}
                     </select>
 
                     <select onChange={handleModelChange} className='findBattery__input' value={model} disabled={!brand}>
-                        <option value="" disabled>Select Model</option>
+                        <option value="" >Модель автомобиля</option>
                         {models.map((model, index) => (
                             <option key={index} value={model}>{model}</option>
                         ))}
                     </select>
                     <select className='findBattery__input' >
-                        <option value="" disabled selected>Выберите топливо</option>
+                        <option value="" >Выберите топливо</option>
                         <option value="" >Бензин</option>
                         <option value="" >Дизель</option>
                     </select>
                 </form>
+                <Link className="findBattery__btn" to={'/catalog/'}>Найти</Link>
 
-                <div className="findBattery__btn">Найти</div>
             </div>
             <div className="bannerBox">
                 <div className="banner baner-yellow">
                     <div className="banner__title">Помочь подобрать аккумулятор?</div>
                     <div className="banner__subtitle">
-                        Оставте заявку мы вам перезвоним!
+                        Оставьте заявку мы вам перезвоним!
                     </div>
-                    <div className="banner__btn">Оставить заявку</div>
+                    <Consolt />
                 </div>
                 <div className="banner banner-white">
                     <div className="banner__title">
-                        Спец. условия для оргнаниций и <br/> тендоров
+                        Спец. условия для организаций и <br/> тендоров
                     </div>
-                    <div className="banner__btn">Смотреть условия</div>
+                    <div className="banner__btn"><a href="https://voltman.kz/clients/corporative-clients/" style={{color: "inherit"}}>Смотреть условия</a></div>
                 </div>
             </div>
         </div>

@@ -6,15 +6,14 @@ import Reviews from "./Reviews/Reviews";
 import about from '../../assets/img/about.svg'
 import link from '../../assets/img/link.svg'
 import zhumabaev from '../../assets/img/shops/shop__zhumabaev.svg'
+import zhambyl from '../../assets/img/shops/shop_2.svg'
 import {Link} from "react-router-dom";
-import s from "../../App.module.css";
 import Find from "./Find/Find";
 
 function Df() {
-return(
-    <Find />
+    return (<Find/>
 
-)
+    )
 }
 
 const Home = () => {
@@ -22,7 +21,7 @@ const Home = () => {
 
     const fetchProducts = async () => {
         try {
-            const response = await axios.get('http://localhost:3001/best-products');
+            const response = await axios.get('/best-products');
             setProducts(response.data.bestProducts);  // Изменено на 'bestProducts'
         } catch (error) {
             console.error('Error fetching products:', error);
@@ -33,12 +32,13 @@ const Home = () => {
         fetchProducts();
     }, []);
 
-    return (
-        <>
+    return (<>
             <div className="container">
 
 
-                <Df />
+                <Df/>
+
+
                 <div className="productSelect">
                     <div className="productSelect__title">
                         В <span style={{color: "#FFF200"}}>Voltman</span> аккумуляторы можно
@@ -54,6 +54,8 @@ const Home = () => {
 
                     </div>
                 </div>
+
+
                 <div className="bestProduct">
                     <div className="bestProduct__title">Выбор покупателей</div>
                     <div className="bestProduct__subtitle">
@@ -61,6 +63,7 @@ const Home = () => {
                     </div>
                     <BestProducts products={products}/>
                 </div>
+
                 <Actions/>
                 <a name='action'></a>
 
@@ -103,14 +106,19 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
+
                 <div className="block__title">Новости</div>
                 <div className="news">
+
+
                     <div className="news__item">
                         <div className="news__title">
                             График работы магазинов в Алматы и Павлодаре на Новый год
                         </div>
                         <div className="news__date">21.12.2022</div>
                     </div>
+
+
                     <div className="news__item">
                         <div className="news__title">
                             В Стамбуле состоялась 8-е собрание аккумуляторных дилеров Казахстана
@@ -123,24 +131,32 @@ const Home = () => {
                         </div>
                         <div className="news__date">21.12.2022</div>
                     </div>
+
+
                     <div className="news__item">
                         <div className="news__title">
                             Результаты третьего «Марафона на миллион»
                         </div>
                         <div className="news__date">21.12.2022</div>
                     </div>
+
+
                     <div className="news__item">
                         <div className="news__title">
                             Результаты второго «Марафона на миллион»
                         </div>
                         <div className="news__date">21.12.2022</div>
                     </div>
+
+
                     <div className="news__item">
                         <div className="news__title">Расширение сети Voltman в Алматы!</div>
                         <div className="news__date">21.12.2022</div>
                     </div>
+
                 </div>
             </div>
+
             <div className="map">
                 <div className="map__info">
                     <div className="map__title">Voltman на карте</div>
@@ -148,24 +164,26 @@ const Home = () => {
                         <div className="map__block">
                             <div className="map__name">Место:</div>
                             <div className="map__content">
-                                пр. Абая, 138/2, уг. ул. Тургута Озала <br/> (рядом с ЖК "Гаухар
-                                Тас")
+                                Улица Магжана Жумабаева, 107
                             </div>
                         </div>
                         <div className="map__block">
                             <div className="map__name">Телефон:</div>
-                            <div className="map__content">+7 778 021 24 28</div>
+                            <div className="map__content">+7‒705‒872‒96‒30</div>
                         </div>
                         <div className="map__block">
                             <div className="map__name">Время работы:</div>
-                            <div className="map__content">Ежедневно: 8:00-20:00</div>
+                            <div className="map__content">Ежедневно: 9:00-19:00</div>
                         </div>
-                        <div className="map__btn">Перейти на Я.Карты</div>
+                        <div className="map__btn"><a href="https://yandex.kz/maps/-/CDURRSis"
+                                                     style={{color: "inherit"}}>Перейти на Я.Карты</a></div>
                     </div>
 
                 </div>
             </div>
+
             <a name='map'></a>
+
             <div className="container">
                 <div className="block__title">Наши магазины в Петропавловске</div>
                 <div className="shops">
@@ -183,8 +201,36 @@ const Home = () => {
                             </div>
                         </div>
                         <div className="shops__content">
-                            <div className="shops__adress">ул. Жумабаева, 107</div>
-                            <div className="shops__phone">+7 7152 50 17 77</div>
+                            <div className="shops__adress">Улица Магжана Жумабаева, 107</div>
+                            <div className="shops__phone">+7‒705‒344‒70‒49</div>
+                            <div className="shop">
+                                <div className="shops__days shops__days-time">
+                                    <div className="shops__day">Пн - Пт:</div>
+                                    <div className="shop__time">9:00 - 19:00</div>
+                                </div>
+                                <div className="shops__days">
+                                    <div className="shops__day">Cб - Вс:</div>
+                                    <div className="shop__time">10:00 - 17:00</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="shops__item">
+                        <div className="shops__top">
+                            <div className="shops__img">
+                                <img src={zhambyl} alt="shop image"/>
+                            </div>
+                            <div className="shops__link">
+                                <img src={link} alt="link"/>
+                                <br/>
+                                <p>
+                                    Показать <br/> на карте
+                                </p>
+                            </div>
+                        </div>
+                        <div className="shops__content">
+                            <div className="shops__adress">Улица Жамбыла Жабаева, 262</div>
+                            <div className="shops__phone">+7‒705‒344‒70‒49</div>
                             <div className="shop">
                                 <div className="shops__days shops__days-time">
                                     <div className="shops__day">Пн - Пт:</div>
@@ -211,12 +257,12 @@ const Home = () => {
                             </div>
                         </div>
                         <div className="shops__content">
-                            <div className="shops__adress">ул. Жумабаева, 107</div>
-                            <div className="shops__phone">+7 7152 50 17 77</div>
+                            <div className="shops__adress">Улица Ярослава Гашека, 27</div>
+                            <div className="shops__phone">+7‒705‒344‒70‒49</div>
                             <div className="shop">
                                 <div className="shops__days shops__days-time">
                                     <div className="shops__day">Пн - Пт:</div>
-                                    <div className="shop__time">9:00 - 19:00</div>
+                                    <div className="shop__time">9:00 - 17:30</div>
                                 </div>
                                 <div className="shops__days">
                                     <div className="shops__day">Cб - Вс:</div>
@@ -225,64 +271,38 @@ const Home = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="shops__item">
-                        <div className="shops__top">
-                            <div className="shops__img">
-                                <img src={zhumabaev} alt="shop image"/>
-                            </div>
-                            <div className="shops__link">
-                                <img src={link} alt="link"/>
-                                <br/>
-                                <p>
-                                    Показать <br/> на карте
-                                </p>
-                            </div>
-                        </div>
-                        <div className="shops__content">
-                            <div className="shops__adress">ул. Жумабаева, 107</div>
-                            <div className="shops__phone">+7 7152 50 17 77</div>
-                            <div className="shop">
-                                <div className="shops__days shops__days-time">
-                                    <div className="shops__day">Пн - Пт:</div>
-                                    <div className="shop__time">9:00 - 19:00</div>
-                                </div>
-                                <div className="shops__days">
-                                    <div className="shops__day">Cб - Вс:</div>
-                                    <div className="shop__time">10:00 - 17:00</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="shops__item">
-                        <div className="shops__top">
-                            <div className="shops__img">
-                                <img src={zhumabaev} alt="shop image"/>
-                            </div>
-                            <div className="shops__link">
-                                <img src={link} alt="link"/>
-                                <br/>
-                                <p>
-                                    Показать <br/> на карте
-                                </p>
-                            </div>
-                        </div>
-                        <div className="shops__content">
-                            <div className="shops__adress">ул. Жумабаева, 107</div>
-                            <div className="shops__phone">+7 7152 50 17 77</div>
-                            <div className="shop">
-                                <div className="shops__days shops__days-time">
-                                    <div className="shops__day">Пн - Пт:</div>
-                                    <div className="shop__time">9:00 - 19:00</div>
-                                </div>
-                                <div className="shops__days">
-                                    <div className="shops__day">Cб - Вс:</div>
-                                    <div className="shop__time">10:00 - 17:00</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    {/*<div className="shops__item">*/}
+                    {/*    <div className="shops__top">*/}
+                    {/*        <div className="shops__img">*/}
+                    {/*            <img src={zhumabaev} alt="shop image"/>*/}
+                    {/*        </div>*/}
+                    {/*        <div className="shops__link">*/}
+                    {/*            <img src={link} alt="link"/>*/}
+                    {/*            <br/>*/}
+                    {/*            <p>*/}
+                    {/*                Показать <br/> на карте*/}
+                    {/*            </p>*/}
+                    {/*        </div>*/}
+                    {/*    </div>*/}
+                    {/*    <div className="shops__content">*/}
+                    {/*        <div className="shops__adress">ул. Жумабаева, 107</div>*/}
+                    {/*        <div className="shops__phone">+7 7152 50 17 77</div>*/}
+                    {/*        <div className="shop">*/}
+                    {/*            <div className="shops__days shops__days-time">*/}
+                    {/*                <div className="shops__day">Пн - Пт:</div>*/}
+                    {/*                <div className="shop__time">9:00 - 19:00</div>*/}
+                    {/*            </div>*/}
+                    {/*            <div className="shops__days">*/}
+                    {/*                <div className="shops__day">Cб - Вс:</div>*/}
+                    {/*                <div className="shop__time">10:00 - 17:00</div>*/}
+                    {/*            </div>*/}
+                    {/*        </div>*/}
+                    {/*    </div>*/}
+                    {/*</div>*/}
                 </div>
             </div>
+
+
         </>
 
 

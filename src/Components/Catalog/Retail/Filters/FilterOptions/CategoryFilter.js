@@ -21,11 +21,11 @@ const CategoryFilter = ({ options, classname, selectedValue, onFilterChange }) =
                     checked={selectedValue === ''}
                     onChange={() => handleCategoryChange({ target: { value: '' } })}
                 />
-                <label htmlFor="all-categories">Все</label>
+                <label className='categor__item' htmlFor="all-categories">Все</label>
             </div>
             {options.map(option => (
                 option.name !== "EFB Технология" && (
-                    <div key={option.id}>
+                    <div  key={option.id}>
                         <input
                             id={`category-${option.id}`}
                             type="checkbox"
@@ -34,7 +34,7 @@ const CategoryFilter = ({ options, classname, selectedValue, onFilterChange }) =
                             onChange={() => handleCategoryChange({ target: { value: option.id } })}
                             className="dn"
                         />
-                        <label htmlFor={`category-${option.id}`}>{option.name}</label>
+                        <label className='categor__item' htmlFor={`category-${option.id}`}>{option.name}</label>
                     </div>
                 )
             ))}

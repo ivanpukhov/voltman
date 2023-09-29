@@ -1,20 +1,22 @@
-import Product from "../../Product/Product";
-import s from '../../Products/Products.module.css'
-import WholesaleProduct from "./WholesaleProduct";
-const Products = ({products}) => {
+import React from 'react';
+import WholesaleProduct from './WholesaleProduct';
 
-
+const Products = ({ products }) => {
     return (
         <div>
-            <h1>Список товаров</h1>
             {products.length === 0 ? (
-                <div>Товары не найдены</div>
+                <div className='noneproduct'>Ой, такого нет :(</div>
             ) : (
-                <div className={s.productslist}>
+                <div className="products">
+                    {products.map((product) => {
+                        // Выполняем проверку за пределами JSX
+                        const isWholesalePriceValid = typeof product.wholesale_price === 'number' && product.wholesale_price > 0;
 
-                {products.map((product) => (
-                        <WholesaleProduct key={product.id} product={product}/>
-                    ))}
+                        // Отображаем компонент только если isWholesalePriceValid равен true
+                        return isWholesalePriceValid ? (
+                            <WholesaleProduct key={product.id} product={product} />
+                        ) : null;
+                    })}
                 </div>
             )}
         </div>

@@ -1,17 +1,98 @@
 import {Link} from "react-router-dom";
-import logo from '../../assets/img/logo.svg'
-import boss from '../../assets/img/boss.svg'
-import humbur from '../../assets/img/humburger.svg'
-import search from '../../assets/img/search.svg'
-import React from "react";
+import logo from '../../assets/img/logo.svg';
+import boss from '../../assets/img/boss.svg';
+import humbur from '../../assets/img/humburger.svg';
+import search from '../../assets/img/search.svg';
+import {useAuth} from '../../AuthContext';
+import React, {useState, useEffect} from 'react';
+import Products from "../Products/Products";
+import xx from '../../assets/img/xx.svg'
+import Call from "../Call";
 
 const PHONE_NUMBER = '8 (7152) 501-777';
 const PHONE_LINK = `tel:${PHONE_NUMBER.replace(/\s/g, '')}`;
 
-const Header = () => (<div className='container'>
+const SearchComponent = () => {
+    const [searchQuery, setSearchQuery] = useState('');
+    const [searchResults, setSearchResults] = useState([]);
+
+    useEffect(() => {
+        const fetchResults = async () => {
+            if (searchQuery.length > 2) {
+                const response = await fetch(`/search?query=${searchQuery}`);
+                const data = await response.json();
+                if (data.products) {
+                    setSearchResults(data.products);
+                }
+            } else {
+                setSearchResults([]);
+            }
+        };
+
+        const timeoutId = setTimeout(() => {
+            fetchResults();
+        }, 300);
+
+        return () => clearTimeout(timeoutId);
+    }, [searchQuery]);
+
+    const handleInputChange = (e) => {
+        setSearchQuery(e.target.value);
+    };
+
+    return (<div className="header__search">
+        <input type="text" placeholder="Введите модель для поиска" value={searchQuery}
+               onChange={handleInputChange}/>
+        {searchResults.length > 0 && (<div className="search-results">
+            <ul>
+                <Products products={searchResults}/>
+            </ul>
+        </div>)}
+    </div>);
+};
+
+const Header = () => {
+    const {token} = useAuth();
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+    const [isSearchVisible, setSearchVisible] = useState(false);
+    const [isMenuVisible, setMenuVisible] = useState(false);
+
+    const handleResize = () => {
+        setWindowWidth(window.innerWidth);
+    };
+
+    useEffect(() => {
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
+    const toggleSearch = () => {
+        setSearchVisible(!isSearchVisible);
+    };
+
+    const closeMenu = () => {
+        setMenuVisible(false);
+        document.body.style.overflow = 'auto';
+        document.documentElement.style.overflow = 'auto';
+    };
+
+    const toggleMenu = () => {
+        setMenuVisible(!isMenuVisible);
+        if (!isMenuVisible) {
+            document.body.style.overflow = 'hidden';
+            document.documentElement.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+            document.documentElement.style.overflow = 'auto';
+        }
+    };
+
+
+    return (<div className='container'>
         <header className="header">
             <Link className="header__logo" to={'/'}>
-
                 <div className="header__logo-img">
                     <img src={logo} alt="Voltman Logo"/>
                 </div>
@@ -19,62 +100,65 @@ const Header = () => (<div className='container'>
                     <img src={boss} alt=""/>
                 </div>
             </Link>
-            <div className="header__search">
-                <input type="text"/>
-            </div>
+            <SearchComponent/>
             <div className="header__login-btn">
-                Вход
+                {token ? (<Link to="/orders">Заказы</Link>) : (<Link to="/login">Вход</Link>)}
             </div>
             <div className="header__contacts">
                 <div className="header__contacts-number">
-                    +7 778 168 55 94
+                    {PHONE_NUMBER}
                 </div>
-                <div className="header__contacts-link">
-                    Заказать звонок
-                </div>
+                <Call/>
             </div>
         </header>
+
         <header className="header__mobile">
-            <div className="search">
-                <img src={search} alt=""/>
-            </div>
-            <div className="header__logo-mobile">
-                <img src={logo} alt="Voltman Logo"/>
-            </div>
-            <input type="checkbox" id="hum"/>
-            <label htmlFor="hum" className="humburger">
-                <img src={humbur} alt=""/>
-
-
-            </label>
-            <div className="hum__block">
-                <header className="header__mobile">
+            <div className="header__mobile-top">
+                <div onClick={toggleSearch}>
                     <div className="search">
-                        <img src={search} alt=""/>
+                        {!isSearchVisible ? (<img src={search} alt="Open Search"/>) : (
+                            <img src={xx} className='xs' alt="Close Search"/>)}
                     </div>
+                </div>
+
+                {isSearchVisible && (<>
+                    <SearchComponent/>
+                    <div className="close-search" onClick={toggleSearch}>
+                        <img src={xx} className='xs' alt="Close Search"/>
+                    </div>
+                </>)}
+                <Link to={'/'}>
                     <div className="header__logo-mobile">
                         <img src={logo} alt="Voltman Logo"/>
                     </div>
-                    <label htmlFor="hum" className="humburger">
-                        <img src={humbur} alt=""/>
-                    </label>
-                </header>
-                <div className="hum__title-block">
-                    Каталог
+                </Link>
+                <div className="humburger" onClick={toggleMenu}>
+                    <img src={humbur} alt=""/>
                 </div>
-                <div className="hum__item">Аккумуляторы для легковых автомобилей</div>
-                <div className="hum__item">Аккумуляторы для грузовых автомобилей</div>
-                <div className="hum__item">Аккумуляторы для мотоциклов</div>
             </div>
-        </header>
-        <div className="menu">
-            <Link to={'/catalog'}><div className="menu__item menu__active">Каталог</div></Link>
-            <a href="/#action"><div className="menu__item">Акции</div></a>
-            <div className="menu__item">Блог</div>
-            <a href="/#map"><div className="menu__item">Контакты</div></a>
 
+            {isMenuVisible && (<div className="menu-hum">
+                <Link className="menu__item" to={'/catalog/'} onClick={closeMenu}>Каталог</Link>
+                <Link className="menu__item" to={'/catalog/'} onClick={closeMenu}>Аккумуляторы по розничным
+                    ценам</Link>
+                <Link className="menu__item" to={'/wholesale/'} onClick={closeMenu}>Аккумуляторы по оптовым
+                    ценам</Link>
+            </div>)}
+        </header>
+
+        <div className="menu">
+            <Link to={'/catalog'}>
+                <div className="menu__item menu__active">Каталог</div>
+            </Link>
+            <a href="/#action">
+                <div className="menu__item">Акции</div>
+            </a>
+            <div className="menu__item">Блог</div>
+            <a href="/#map">
+                <div className="menu__item">Контакты</div>
+            </a>
         </div>
-    </div>
-);
+    </div>);
+};
 
 export default Header;

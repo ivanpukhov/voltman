@@ -1,25 +1,35 @@
-import React from 'react';
-import s from '../../Product/Product.module.css'
-const Product = ({product }) => {
+import React, {useState} from 'react';
+import {useCart} from '../../../CartContext';
+
+const Product = ({product}) => {
+    const {addToCart} = useCart();
+    const [buttonClicked, setButtonClicked] = useState(false);
+
+    const handleButtonClick = () => {
+        addToCart(product);
+        setButtonClicked(true);
+    }
+
     return (
-                <div key={product.id} className={s.productcard}>
-                    <div className={s.productimage}>
-                        <img
-                            src={'http://localhost:3001'+product.photo}
-                            alt={product.model}
-                            className={s.productphoto}
-                        />
-                    </div>
-                    <div className={s.productdetails}>
-                        <h3 className={s.productmodel}>{product.id} {product.model}</h3>
-                        <p className={s.productprice}>
-                            Wholesale Price: ${product.wholesale_price}
-                        </p>
-                        <p className={s.productdescription}>
-                            {/* Здесь может быть описание товара */}
-                        </p>
+            <div className="product">
+                <div className="product__photo">
+                    <img src={product.photo} alt={product.model}/>
+                </div>
+                <div className="product__content">
+                    <div className="product__title">{product.model}</div>
+                    <div className="product__price">{product.wholesale_price} тг.</div>
+                    <div className="product__is">Есть в наличии</div>
+
+                    <div className="product__btn"
+                         onClick={handleButtonClick}
+                         style={{
+                             backgroundColor: buttonClicked ? 'green' : '#FFF200',
+                             color: buttonClicked ? '#fff' : '#000'
+                         }}>
+                        {buttonClicked ? '✓' : 'Заказать'}
                     </div>
                 </div>
+            </div>
     );
 };
 
