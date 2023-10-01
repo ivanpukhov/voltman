@@ -23,7 +23,7 @@ const Consolt = () => {
             items: ""
         };
         try {
-            const response = await axios.post('http://31.129.107.35:3001/api//order', orderData);
+            const response = await axios.post('http://31.129.108.131:3001/api//order', orderData);
             if (response.data.message) {
                 alert(`Заказ создан. Номер заказа: ${response.data.orderId}`);
             }

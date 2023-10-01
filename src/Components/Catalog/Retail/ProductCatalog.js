@@ -28,7 +28,7 @@ const ProductCatalog = () => {
                 params.sort_by = selectedSort.field;
                 params.order = selectedSort.order;
             }
-            const response = await axios.get('http://31.129.107.35:3001/api/products-retail', {params});
+            const response = await axios.get('http://31.129.108.131:3001/api/products-retail', {params});
 
             setProducts(response.data.products);
 
