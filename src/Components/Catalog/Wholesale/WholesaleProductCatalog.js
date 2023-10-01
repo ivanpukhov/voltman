@@ -29,7 +29,7 @@ const ProductCatalog = () => {
                 params.sort_by = selectedSort.field;
                 params.order = selectedSort.order;
             }
-            const response = await axios.get('http://31.129.108.131:3001/api/products-wholesale', {params});
+            const response = await axios.get('https://voltman.ix-web.site/api/products-wholesale', {params});
 
             setProducts(response.data.products);
 

@@ -20,7 +20,7 @@ const SearchComponent = () => {
     useEffect(() => {
         const fetchResults = async () => {
             if (searchQuery.length > 2) {
-                const response = await fetch(`http://31.129.108.131:3001/api/search?query=${searchQuery}`);
+                const response = await fetch(`https://voltman.ix-web.site/api/search?query=${searchQuery}`);
                 const data = await response.json();
                 if (data.products) {
                     setSearchResults(data.products);

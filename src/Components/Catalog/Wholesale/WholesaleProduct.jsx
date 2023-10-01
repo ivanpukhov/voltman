@@ -13,7 +13,7 @@ const Product = ({product}) => {
     return (
             <div className="product">
                 <div className="product__photo">
-                    <img src={'http://31.129.108.131:3001/api'+product.photo} alt={product.model}/>
+                    <img src={'https://voltman.ix-web.site/api'+product.photo} alt={product.model}/>
                 </div>
                 <div className="product__content">
                     <div className="product__title">{product.model}</div>

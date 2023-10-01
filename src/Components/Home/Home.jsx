@@ -21,7 +21,7 @@ const Home = () => {
 
     const fetchProducts = async () => {
         try {
-            const response = await axios.get('http://31.129.108.131:3001/api/best-products');
+            const response = await axios.get('https://voltman.ix-web.site/api/best-products');
             setProducts(response.data.bestProducts);  // Изменено на 'bestProducts'
         } catch (error) {
             console.error('Error fetching products:', error);

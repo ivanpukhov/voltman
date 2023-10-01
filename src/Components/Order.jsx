@@ -17,7 +17,7 @@ const Order = () => {
                         'Authorization': `Bearer ${token}`
                     }
                 };
-                const response = await axios.get(`http://31.129.108.131:3001/api/order/${id}`, config);
+                const response = await axios.get(`https://voltman.ix-web.site/api/order/${id}`, config);
                 setOrder(response.data);
             } catch (error) {
                 console.error("An error occurred while fetching data: ", error);
