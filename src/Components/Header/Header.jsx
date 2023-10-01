@@ -9,6 +9,7 @@ import Products from "../Products/Products";
 import xx from '../../assets/img/xx.webp'
 import Call from "../Call";
 
+
 const PHONE_NUMBER = '8 (7152) 501-777';
 const PHONE_LINK = `tel:${PHONE_NUMBER.replace(/\s/g, '')}`;
 
