@@ -5,7 +5,7 @@ import Products from "../../Products/Products";
 import CategoryFilter from "./Filters/FilterOptions/CategoryFilter";
 import SortFilter from "./Filters/FilterOptions/SortFilter";
 import Modal from "react-modal";
-import xx from "../../../assets/img/xx.svg";
+import xx from "../../../assets/img/xx.webp";
 import ClipLoader from "react-spinners/ClipLoader";
 
 const ProductCatalog = () => {
@@ -28,7 +28,7 @@ const ProductCatalog = () => {
                 params.sort_by = selectedSort.field;
                 params.order = selectedSort.order;
             }
-            const response = await axios.get('http://localhost:3001/products-retail', {params});
+            const response = await axios.get('http://31.129.107.35:3001/api/products-retail', {params});
 
             setProducts(response.data.products);
 

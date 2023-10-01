@@ -16,7 +16,7 @@ const Orders = () => {
                         'Authorization': `Bearer ${token}`
                     }
                 };
-                const response = await axios.get('/orders', config);
+                const response = await axios.get('/api/orders', config);
                 setOrders(response.data.orders);
             } catch (error) {
                 console.error("An error occurred while fetching data: ", error);

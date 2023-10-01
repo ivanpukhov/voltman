@@ -13,7 +13,7 @@ const Product = ({product}) => {
     return (
             <div className="product">
                 <div className="product__photo">
-                    <img src={product.photo} alt={product.model}/>
+                    <img src={'http://localhost:3001'+product.photo} alt={product.model}/>
                 </div>
                 <div className="product__content">
                     <div className="product__title">{product.model}</div>

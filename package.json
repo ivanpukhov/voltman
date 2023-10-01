@@ -2,7 +2,6 @@
   "name": "reaxt",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:3001",
   "dependencies": {
     "@babel/core": "^7.23.0",
     "@babel/plugin-syntax-flow": "^7.14.5",
@@ -28,7 +27,6 @@
     "web-vitals": "^3.5.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.0.0",
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@babel/plugin-transform-react-jsx": "^7.22.15",
     "typescript": "^5.2.2"

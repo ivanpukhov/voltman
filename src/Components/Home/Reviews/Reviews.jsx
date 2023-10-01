@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import photo from '../../../assets/img/review.webp'
-import next from '../../../assets/img/next.svg'
-import prewiew from '../../../assets/img/prewiew.svg'
+import next from '../../../assets/img/next.webp'
+import prewiew from '../../../assets/img/prewiew.webp'
 
 const Reviews = () => {
     const [index, setIndex] = useState(0);
@@ -19,7 +19,7 @@ const Reviews = () => {
         }, {
             name: 'Калима',
             text: 'Качество обслуживания на высоком уровне, доставка и выдача товара были вовремя, мне очень понравилось. Спасибо!',
-            image: 'assets/img/review.svg'
+            image: 'assets/img/review.webp'
         },
         // добавьте остальные слайды по аналогии
     ];

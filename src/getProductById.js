@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const getProductById = async (productId) => {
     try {
-        const response = await axios.get(`/product/${productId}`);
+        const response = await axios.get(`http://31.129.107.35:3001/api/product/${productId}`);
         return response.data; // Предполагается, что сервер вернет данные о товаре в формате JSON
     } catch (error) {
         console.error(`Ошибка при получении данных о товаре с id ${productId}: ${error}`);

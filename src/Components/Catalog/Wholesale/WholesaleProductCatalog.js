@@ -2,7 +2,7 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import Modal from "react-modal";
-import xx from "../../../assets/img/xx.svg";
+import xx from "../../../assets/img/xx.webp";
 import ClipLoader from "react-spinners/ClipLoader";
 import CategoryFilter from "../Retail/Filters/FilterOptions/CategoryFilter";
 import SortFilter from "../Retail/Filters/FilterOptions/SortFilter";
@@ -29,7 +29,7 @@ const ProductCatalog = () => {
                 params.sort_by = selectedSort.field;
                 params.order = selectedSort.order;
             }
-            const response = await axios.get('/products-wholesale', {params});
+            const response = await axios.get('http://31.129.107.35:3001/api/products-wholesale', {params});
 
             setProducts(response.data.products);
 

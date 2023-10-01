@@ -2,7 +2,8 @@ import Product from "../Product/Product";
 import s from './Products.module.css'
 
 
-const Products = ({ products }) => {
+const Products = ({ products = [] }) => {
+
     console.log(products)
 
     return (

@@ -1,6 +1,6 @@
-import one from '../../../assets/img/action__batary.svg'
-import two from '../../../assets/img/action__safe.svg'
-import three from '../../../assets/img/action__key.svg'
+import one from '../../../assets/img/action__batary.webp'
+import two from '../../../assets/img/action__safe.webp'
+import three from '../../../assets/img/action__key.webp'
 
 const Actions = () => {
     return (

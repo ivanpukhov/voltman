@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.2838ff2b.css",
-    "main.js": "/static/js/main.fc37224b.js",
+    "main.js": "/static/js/main.ac27d689.js",
     "static/js/496.9daaf1ba.chunk.js": "/static/js/496.9daaf1ba.chunk.js",
     "static/media/map.svg": "/static/media/map.22d14f26f326ff862cb7.svg",
     "static/media/banner-white-mobile.svg": "/static/media/banner-white-mobile.46bad8870625ae8b1567.svg",
@@ -14,6 +14,7 @@
     "static/media/shop_2.webp": "/static/media/shop_2.93e487d1de4d135b0954.webp",
     "static/media/action__batary.webp": "/static/media/action__batary.9abed3254475c890be04.webp",
     "static/media/action__safe.webp": "/static/media/action__safe.9d198f6f8ccfb418025f.webp",
+    "static/media/no_photo.webp": "/static/media/no_photo.82dcd0a1c03e0084342d.webp",
     "static/media/review.webp": "/static/media/review.03297ef1bb8406200a01.webp",
     "static/media/boss.webp": "/static/media/boss.8011b08d580904695c29.webp",
     "static/media/logo.webp": "/static/media/logo.f2012dbb675d882f590d.webp",
@@ -42,11 +43,11 @@
     "static/media/aviable.svg": "/static/media/aviable.224c372d860746ba30f0.svg",
     "static/media/humburger.webp": "/static/media/humburger.e400f0c301ef13d6df76.webp",
     "main.2838ff2b.css.map": "/static/css/main.2838ff2b.css.map",
-    "main.fc37224b.js.map": "/static/js/main.fc37224b.js.map",
+    "main.ac27d689.js.map": "/static/js/main.ac27d689.js.map",
     "496.9daaf1ba.chunk.js.map": "/static/js/496.9daaf1ba.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2838ff2b.css",
-    "static/js/main.fc37224b.js"
+    "static/js/main.ac27d689.js"
   ]
 }

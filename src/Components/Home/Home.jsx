@@ -3,10 +3,10 @@ import axios from "axios";
 import BestProducts from "../BestProducts/BestProducts";
 import Actions from "./Actions/Actions";
 import Reviews from "./Reviews/Reviews";
-import about from '../../assets/img/about.svg'
-import link from '../../assets/img/link.svg'
-import zhumabaev from '../../assets/img/shops/shop__zhumabaev.svg'
-import zhambyl from '../../assets/img/shops/shop_2.svg'
+import about from '../../assets/img/about.webp'
+import link from '../../assets/img/link.webp'
+import zhumabaev from '../../assets/img/shops/shop__zhumabaev.webp'
+import zhambyl from '../../assets/img/shops/shop_2.webp'
 import {Link} from "react-router-dom";
 import Find from "./Find/Find";
 
@@ -21,7 +21,7 @@ const Home = () => {
 
     const fetchProducts = async () => {
         try {
-            const response = await axios.get('/best-products');
+            const response = await axios.get('http://31.129.107.35:3001/api/best-products');
             setProducts(response.data.bestProducts);  // Изменено на 'bestProducts'
         } catch (error) {
             console.error('Error fetching products:', error);

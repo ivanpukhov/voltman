@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import axios from 'axios';
 import Modal from 'react-modal';
-import cartPhoto from './../assets/img/cart.svg'
-import xx from './../assets/img/xx.svg'
+import cartPhoto from './../assets/img/cart.webp'
+import xx from './../assets/img/xx.webp'
 
 Modal.setAppElement('#root'); // Указывает корневой элемент для доступности
 
@@ -23,7 +23,7 @@ const Consolt = () => {
             items: ""
         };
         try {
-            const response = await axios.post('/order', orderData);
+            const response = await axios.post('http://31.129.107.35:3001/api//order', orderData);
             if (response.data.message) {
                 alert(`Заказ создан. Номер заказа: ${response.data.orderId}`);
             }

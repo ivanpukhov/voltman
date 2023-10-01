@@ -15,7 +15,7 @@ const Login = () => {
 
         try {
             // Запрос на авторизацию
-            const res = await axios.post('/login', { username, password });
+            const res = await axios.post('/api/login', { username, password });
 
             if (res.data && res.data.accessToken) {
                 // Установка токена в контекст

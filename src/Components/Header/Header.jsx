@@ -1,12 +1,12 @@
 import {Link} from "react-router-dom";
-import logo from '../../assets/img/logo.svg';
-import boss from '../../assets/img/boss.svg';
-import humbur from '../../assets/img/humburger.svg';
-import search from '../../assets/img/search.svg';
+import logo from '../../assets/img/logo.webp';
+import boss from '../../assets/img/boss.webp';
+import humbur from '../../assets/img/humburger.webp';
+import search from '../../assets/img/search.webp';
 import {useAuth} from '../../AuthContext';
 import React, {useState, useEffect} from 'react';
 import Products from "../Products/Products";
-import xx from '../../assets/img/xx.svg'
+import xx from '../../assets/img/xx.webp'
 import Call from "../Call";
 
 const PHONE_NUMBER = '8 (7152) 501-777';

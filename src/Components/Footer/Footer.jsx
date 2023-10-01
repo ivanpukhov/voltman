@@ -1,8 +1,8 @@
-import cards from '../../assets/img/cards.svg'
-import twitter from '../../assets/img/twitter.svg'
-import facebook__icon from '../../assets/img/facebook__icon.svg'
-import insta__icon from '../../assets/img/insta__icon.svg'
-import vk__icons from '../../assets/img/vk__icon.svg'
+import cards from '../../assets/img/cards.webp'
+import twitter from '../../assets/img/twitter.webp'
+import facebook__icon from '../../assets/img/facebook__icon.webp'
+import insta__icon from '../../assets/img/insta__icon.webp'
+import vk__icons from '../../assets/img/vk__icon.webp'
 
 
 const PHONE_NUMBER = '8 (7152) 501-777';

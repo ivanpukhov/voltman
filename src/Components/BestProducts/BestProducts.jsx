@@ -2,7 +2,8 @@ import Product from "../Product/Product";
 import s from '../../BestProduct.module.css'
 import BestProduct from "../BestProduct/BestProduct";
 
-const BestProducts = ({products}) => {
+const BestProducts = ({ products = [] }) => {
+
 
 
     return (
