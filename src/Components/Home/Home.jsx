@@ -157,34 +157,6 @@ const Home = () => {
                     <div className="shops__item">
                         <div className="shops__top">
                             <div className="shops__img">
-                                <img src={zhumabaev} alt="shop image"/>
-                            </div>
-                            <div className="shops__link">
-                                <img src={link} alt="link"/>
-                                <br/>
-                                <p>
-                                    Показать <br/> на карте
-                                </p>
-                            </div>
-                        </div>
-                        <div className="shops__content">
-                            <div className="shops__adress">Улица Магжана Жумабаева, 107</div>
-                            <div className="shops__phone">+7‒705‒344‒70‒49</div>
-                            <div className="shop">
-                                <div className="shops__days shops__days-time">
-                                    <div className="shops__day">Пн - Пт:</div>
-                                    <div className="shop__time">9:00 - 19:00</div>
-                                </div>
-                                <div className="shops__days">
-                                    <div className="shops__day">Cб - Вс:</div>
-                                    <div className="shop__time">10:00 - 17:00</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="shops__item">
-                        <div className="shops__top">
-                            <div className="shops__img">
                                 <img src={zhambyl} alt="shop image"/>
                             </div>
                             <div className="shops__link">
@@ -206,6 +178,35 @@ const Home = () => {
                                 <div className="shops__days">
                                     <div className="shops__day">Cб - Вс:</div>
                                     <div className="shop__time">10:00 - 17:00</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="shops__item">
+                        <div className="shops__top">
+                            <div className="shops__img">
+                                <img src={zhumabaev} alt="shop image"/>
+                            </div>
+                            <div className="shops__link">
+                                <img src={link} alt="link"/>
+                                <br/>
+                                <p>
+                                    Показать <br/> на карте
+                                </p>
+                            </div>
+                        </div>
+                        <div className="shops__content">
+                            <div className="shops__adress">Улица Магжана Жумабаева, 107</div>
+                            <div className="shops__phone">+7‒705‒344‒70‒49</div>
+                            <div className="shop">
+                                <div className="shops__days shops__days-time">
+                                    <div className="shops__day">Пн - Пт:</div>
+                                    <div className="shop__time">9:00 - 19:00</div>
+                                </div>
+                                <div className="shops__days">
+                                    <div className="shops__day">Cб - Вс:</div>
+                                    <div className="shop__time">выходной</div>
                                 </div>
                             </div>
                         </div>
@@ -233,7 +234,7 @@ const Home = () => {
                                 </div>
                                 <div className="shops__days">
                                     <div className="shops__day">Cб - Вс:</div>
-                                    <div className="shop__time">10:00 - 17:00</div>
+                                    <div className="shop__time">выходной</div>
                                 </div>
                             </div>
                         </div>
@@ -260,11 +261,11 @@ const Home = () => {
                             <div className="shop">
                                 <div className="shops__days shops__days-time">
                                     <div className="shops__day">Пн - Пт:</div>
-                                    <div className="shop__time">9:00 - 19:00</div>
+                                    <div className="shop__time">9:00 - 13:00</div>
                                 </div>
                                 <div className="shops__days">
                                     <div className="shops__day">Cб - Вс:</div>
-                                    <div className="shop__time">10:00 - 17:00</div>
+                                    <div className="shop__time">выходной</div>
                                 </div>
                             </div>
                         </div>
@@ -288,11 +289,11 @@ const Home = () => {
                             <div className="shop">
                                 <div className="shops__days shops__days-time">
                                     <div className="shops__day">Пн - Пт:</div>
-                                    <div className="shop__time">9:00 - 19:00</div>
+                                    <div className="shop__time">9:00 - 13:00</div>
                                 </div>
                                 <div className="shops__days">
                                     <div className="shops__day">Cб - Вс:</div>
-                                    <div className="shop__time">10:00 - 17:00</div>
+                                    <div className="shop__time">выходной</div>
                                 </div>
                             </div>
                         </div>
