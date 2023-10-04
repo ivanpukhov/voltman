@@ -24,7 +24,7 @@ const CapacityFilter = ({ options, selectedValue, onFilterChange }) => {
                 onChange={handleCapacityChange}
                 options={selectOptions}
                 classNamePrefix="custom-select"
-                placeholder='Пусковый ток, А'
+                placeholder='Емкость, Ач'
             />
         </div>
     );

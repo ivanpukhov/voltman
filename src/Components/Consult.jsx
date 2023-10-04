@@ -35,7 +35,7 @@ const Consolt = () => {
     return (<>
         <button onClick={openModal} className='banner__btn'>
            Оставить заявку
-        </button>Frj
+        </button>
         <Modal
             isOpen={modalIsOpen}
             onRequestClose={closeModal}

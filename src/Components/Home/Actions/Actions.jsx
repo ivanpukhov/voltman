@@ -23,18 +23,7 @@ const Actions = () => {
                             батареи на утилизацию на лучших..... Далее
                         </div>
                     </div>
-                    <div className="action__item">
-                        <div className="action__title">Гарантия 24 месяца</div>
-                        <div className="action__img">
-                            <img src={two} alt=""/>
-                        </div>
-                        <div className="action__subtitle">24 месяца гарантии</div>
-                        <div className="action__text">
-                            Теперь при покупке любого аккумулятора Energizer или Mutlu Вы можете
-                            выбрать вместо стандартной, безусловной гарантии на заводской
-                            брак.....{" "}
-                        </div>
-                    </div>
+
                     <div className="action__item">
                         <div className="action__title">Доставка и установка в подарок</div>
                         <div className="action__img action__img-mod">

@@ -88,7 +88,7 @@ h6 {
 }
 
 body {
-    background-color: #0B0B0B;
+    background-color: #FFFFFF;
 }
 
 .container, .container-catalog {
@@ -118,6 +118,9 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color: white !important;
+    border-bottom: 1px solid black;
+    margin-bottom: 50px;
 }
 
 .header__mobile {
@@ -143,6 +146,7 @@ body {
     border-radius: 10px;
     border: 1px solid #A5A2A0;
     background: #F4F4F4;
+    padding: 0 20px;
     width: 100%;
     height: 48px;
     flex-shrink: 0;
@@ -175,7 +179,7 @@ body {
 
 .header__contacts-number {
     font-size: 18px;
-    color: #FFF;
+    color: #000;
     font-weight: 600;
 }
 
@@ -184,7 +188,7 @@ body {
     height: 37px;
     border-radius: 8px;
     background: #FFF200;
-    color: #0B0B0B;
+    color: #000;
     font-family: Inter;
     font-size: 16px;
     font-weight: 400;
@@ -211,15 +215,16 @@ body {
     align-items: center;
     border-radius: 10px;
     padding: 12px 26px;
-    border: 1px solid rgba(255, 242, 0, 0.8);
-    color: #FFF;
+    border: 1px solid #827d05;
+    color: #000;
     font-size: 20px;
 }
 
 .menu__active {
-    color: #0B0B0B;
+    color: #000;
     font-size: 16px;
     background: #FFF200;
+    border: none;
 }
 
 .menu__active::before {
@@ -244,7 +249,7 @@ body {
 }
 
 .findBattery_title {
-    color: #FFF;
+    color: #000;
     font-family: Gotham Pro;
     font-size: 72px;
     font-style: italic;
@@ -253,7 +258,7 @@ body {
 }
 
 .findBattery_subtitle {
-    color: #FFF;
+    color: #000;
     font-family: Inter;
     font-size: 24px;
     font-style: normal;
@@ -277,7 +282,7 @@ body {
     border-radius: 20px;
     border: 1px solid #A5A2A0;
     background-color: transparent;
-    color: #FFF;
+    color: #000;
     font-family: Inter;
     font-size: 24px;
     font-style: normal;
@@ -334,7 +339,7 @@ body {
 }
 
 .banner__title {
-    color: #FFF;
+    color: #fff;
     max-width: 448px;
     font-family: Gotham Pro;
     font-size: 40px;
@@ -346,7 +351,7 @@ body {
 }
 
 .banner__subtitle {
-    color: #FFF;
+    color: #fff;
     font-family: Inter;
     font-size: 20px;
     font-style: normal;
@@ -364,7 +369,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #0B0B0B;
+    color: #000;
     font-family: Gotham Pro;
     font-size: 20px;
     font-style: normal;
@@ -390,7 +395,7 @@ body {
 }
 
 .productSelect__title {
-    color: #FFF;
+    color: #000;
     font-family: Gotham Pro;
     font-size: 32px;
     font-style: italic;
@@ -410,7 +415,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #FFF;
+    color: #000;
     font-family: Gotham Pro;
     font-size: 22px;
     font-style: normal;
@@ -426,7 +431,7 @@ body {
 }
 
 .bestProduct__title {
-    color: #FFF;
+    color: #000;
     font-family: Gotham Pro;
     font-size: 48px;
     font-style: italic;
@@ -436,7 +441,7 @@ body {
 
 .bestProduct__subtitle {
     margin-top: 48px;
-    color: #FFF;
+    color: #000;
     font-family: Inter;
     font-size: 32px;
     font-style: normal;
@@ -464,7 +469,7 @@ body {
     flex-shrink: 0;
     border-radius: 10px;
     padding: 24px 16px;
-    background: #FFF;
+    border: 1px solid rgb(192, 176, 0);
 }
 
 .product__photo {
@@ -488,7 +493,8 @@ body {
 }
 
 .product__title {
-    color: #000;
+    color: black;
+    max-width: 200px;
     font-family: Inter;
     font-size: 16px;
     font-style: normal;
@@ -497,7 +503,7 @@ body {
 }
 
 .product__price {
-    color: #000;
+    color: black;
     font-family: Inter;
     font-size: 24px;
     font-style: normal;
@@ -506,7 +512,7 @@ body {
 }
 
 .product__is {
-    color: #000;
+    color: black;
     font-family: Inter;
     font-size: 13px;
     font-style: normal;
@@ -521,7 +527,7 @@ body {
 
 .product__btn {
     cursor: pointer;
-    color: #000;
+    color: black;
     font-family: Inter;
     font-size: 14px;
     font-style: normal;
@@ -553,20 +559,21 @@ body {
 }
 
 .action__item {
-    width: 410px;
-    height: 542px;
+    max-width: 596px;
+    flex-shrink: 0;
+    width: 596px;
     border-radius: 10px;
     background: url("assets/img/action__back.svg");
     background-size: 100% 100%;
     overflow: hidden;
-    padding: 36px 32px;
+    padding: 36px 82px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
 .action__title {
-    color: #FFF;
+    color: #fff;
     font-family: Gotham Pro;
     font-size: 36px;
     font-style: italic;
@@ -575,7 +582,7 @@ body {
 }
 
 .action__subtitle {
-    color: #FFF;
+    color: #fff;
     font-family: Inter;
     font-size: 24px;
     font-style: normal;
@@ -584,7 +591,7 @@ body {
 }
 
 .action__text {
-    color: #FFF;
+    color: #fff;
     font-family: Inter;
     font-size: 20px;
     font-style: normal;
@@ -594,7 +601,7 @@ body {
 }
 
 .block__title {
-    color: #FFF;
+    color: #000;
     font-family: Gotham Pro;
     font-size: 48px;
     font-style: italic;
@@ -647,7 +654,7 @@ body {
 }
 
 .slider__name {
-    color: #FFF;
+    color: #fff;
     font-family: Inter;
     font-size: 32px;
     font-style: normal;
@@ -657,7 +664,7 @@ body {
 
 .slider__text {
     width: 803px;
-    color: #FFF;
+    color: #fff;
     text-align: center;
     font-family: Inter;
     font-size: 20px;
@@ -694,13 +701,13 @@ body {
 .about {
     display: flex;
     justify-content: space-between;
-    color: #fff;
+    color: #000;
     margin-top: 80px;
     gap: 30px;
 }
 
 .about__title {
-    color: #FFF;
+    color: #000;
     font-family: Gotham Pro;
     font-size: 64px;
     font-style: italic;
@@ -709,7 +716,7 @@ body {
 }
 
 .about__subtitle {
-    color: #FFF;
+    color: #000;
     font-family: Inter;
     font-size: 36px;
     font-style: normal;
@@ -720,7 +727,7 @@ body {
 }
 
 .about__text {
-    color: #FFF;
+    color: #000;
     font-family: Inter;
     font-size: 20px;
     font-style: normal;
@@ -758,7 +765,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     transition: 0.6s;
-    color: #fff;
+    color: #000;
 }
 
 .news__item:hover {
@@ -799,7 +806,7 @@ body {
     height: 472px;
     flex-shrink: 0;
     border-radius: 20px;
-    background: #FFF;
+    background: #fff;
     padding: 57px;
     margin-left: 10vw;
 }
@@ -821,7 +828,7 @@ body {
 }
 
 .map__name {
-    color: #000;
+    color: white;
     font-family: Inter;
     font-size: 20px;
     font-style: normal;
@@ -830,7 +837,7 @@ body {
 }
 
 .map__content {
-    color: #000;
+    color: white;
     font-family: Inter;
     font-size: 20px;
     font-style: normal;
@@ -866,6 +873,7 @@ body {
 .shops__item {
     width: 100%;
     max-width: 620px;
+    padding: 0 0 420px 0;
     height: 399px;
     border-radius: 10px;
     background: #1E1E1E;
@@ -890,7 +898,6 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    color: #000;
     text-align: center;
     font-family: Gotham Pro;
     font-size: 20px;
@@ -906,10 +913,15 @@ body {
     display: flex;
     flex-direction: column;
     gap: 15px;
+
+}
+
+.shops__content *{
+    color: #FFF !important;
 }
 
 .shops__adress {
-    color: #FFF;
+    color: #000;
     font-family: Inter;
     font-size: 32px;
     font-style: normal;
@@ -919,7 +931,7 @@ body {
 }
 
 .shops__phone {
-    color: #FFF;
+    color: #000;
     font-family: Inter;
     font-size: 24px;
     font-style: normal;
@@ -944,7 +956,7 @@ body {
 }
 
 .shops__day {
-    color: #FFF;
+    color: #000;
     font-family: Inter;
     font-size: 24px;
     font-style: normal;
@@ -966,7 +978,7 @@ body {
 }
 
 .shop__time {
-    color: #FFF;
+    color: #000;
     font-family: Inter;
     font-size: 24px;
     font-style: normal;
@@ -976,11 +988,11 @@ body {
 
 .footer {
     display: flex;
-    opacity: 0.7;
-    background: #1A1A1A;
+    background: #000;
     flex-direction: column;
     margin-top: 78px;
     padding-top: 63px;
+    color: #fff !important;
 }
 
 .footer__top {
@@ -989,7 +1001,8 @@ body {
 }
 
 .footer__title {
-    color: #FFF;
+    color: #fff !important;
+
     font-family: Gotham Pro;
     font-size: 32px;
     font-style: normal;
@@ -1011,7 +1024,8 @@ body {
 }
 
 .footer__menu-item {
-    color: #FFF;
+    color: #fff !important;
+
     font-family: Inter;
     font-size: 18px;
     font-style: normal;
@@ -1044,7 +1058,7 @@ body {
 }
 
 .footer__number {
-    color: #FFF;
+    color: #fff !important;
     font-family: Inter;
     font-size: 24px;
     font-style: normal;
@@ -1060,7 +1074,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #000;
+    color: black;
     font-family: Gotham Pro;
     font-size: 16px;
     font-style: normal;
@@ -1070,7 +1084,7 @@ body {
 
 .footer__adress {
     width: 369px;
-    color: #FFF;
+    color: #fff;
     font-family: Inter;
     font-size: 18px;
     font-style: normal;
@@ -1087,7 +1101,7 @@ body {
 }
 
 .footer__mail {
-    color: #FFF;
+    color: #fff;
     font-family: Inter;
     font-size: 16px;
     font-style: normal;
@@ -1113,7 +1127,7 @@ body {
 }
 
 .footer__copyrigth {
-    color: #FFF;
+    color: #fff;
     font-family: Inter;
     font-size: 16px;
     font-style: normal;
@@ -1138,9 +1152,16 @@ body {
     display: none;
 }
 
+.shops__img img {
+    margin: 0;
+    width: 98%;
+    height: 100%;
+    border-radius: 10px;
+}
+
 .categor {
     display: flex;
-    color: #FFF;
+    color: #000;
     font-family: Inter;
     align-items: center;
     font-size: 16px;
@@ -1158,11 +1179,12 @@ body {
     width: fit-content;
     height: 41px;
     border-radius: 10px;
-    background: #191919;
+    background: #000;
     cursor: pointer;
     justify-content: center;
     display: flex;
     padding: 20px 30px;
+    color: white;
     align-items: center;
     white-space: nowrap;
 }
@@ -1184,7 +1206,7 @@ input:checked ~ .categor {
 }
 
 .catalog__title {
-    color: #FFF;
+    color: #000;
     font-family: Gotham Pro, serif;
     font-size: 32px;
     font-style: italic;
@@ -1207,7 +1229,7 @@ input:checked ~ .categor {
 }
 
 .filters__title, .custom-select__placeholder, .custom-select__value-container, .custom-select-1__value-container {
-    color: #FFF !important;
+    color: #fff !important;
     font-family: Inter !important;
     font-size: 18px !important;
     font-style: normal;
@@ -1217,7 +1239,7 @@ input:checked ~ .categor {
 
 .filters__price input,
 .filters__price input::placeholder {
-    color: #FFF;
+    color: #fff;
     font-family: Inter;
     font-size: 16px;
     margin-top: 24px;
@@ -1252,7 +1274,7 @@ input:checked ~ .categor {
     margin-top: 32px;
     display: flex;
 
-    color: #FFF;
+    color: #000;
     font-family: Inter;
     font-size: 20px;
     font-style: normal;
@@ -1276,7 +1298,7 @@ input:checked ~ .categor {
 }
 
 .noneproduct {
-    color: #FFF;
+    color: #000;
     font-family: Inter;
     font-size: 24px;
     font-style: normal;
@@ -1306,7 +1328,7 @@ input:checked ~ .categor {
 }
 
 .css-b62m3t-container .custom-select__single-value {
-    color: #FFF !important;
+    color: #fff !important;
     opacity: .6;
 }
 
@@ -1378,7 +1400,7 @@ input:checked ~ .categor {
 }
 
 .css-b62m3t-container .custom-select-1__menu {
-    background: #000;
+    background: white;
     display: flex;
     flex-direction: row;
     overflow: hidden;
@@ -1396,7 +1418,7 @@ input:checked ~ .categor {
 }
 
 .css-b62m3t-container .custom-select-1__option {
-    color: #FFF;
+    color: #fff;
     font-family: Inter;
     font-style: normal;
     width: 230px;
@@ -1406,7 +1428,7 @@ input:checked ~ .categor {
 
 
 .css-b62m3t-container .custom-select__option, .custom-select-1__option {
-    color: #FFF;
+    color: #fff;
     font-family: Inter;
     font-style: normal;
     display: inline-flex;
@@ -1589,7 +1611,7 @@ input:checked ~ .categor {
 
 
 .cart__title {
-    color: #FFF;
+    color: #000;
     font-size: 20px;
     font-weight: 400;
     line-height: normal;
@@ -1656,7 +1678,7 @@ input:checked ~ .categor {
 
 
     .container {
-        padding: 24px;
+        padding: 14px;
     }
 
     .findBattery {
@@ -1668,7 +1690,7 @@ input:checked ~ .categor {
     }
 
     .findBattery_title {
-        color: #FFF;
+        color: #000;
         font-family: Gotham Pro;
         font-size: 40px;
         font-style: italic;
@@ -1679,7 +1701,7 @@ input:checked ~ .categor {
     }
 
     .findBattery_subtitle {
-        color: #FFF;
+        color: #000;
         font-family: Inter;
         font-size: 16px;
         font-style: normal;
@@ -1696,7 +1718,7 @@ input:checked ~ .categor {
     }
 
     .findBattery__input::-moz-placeholder {
-        color: #A5A2A0;
+        color: #000;
         font-family: Inter;
         font-size: 16px;
         font-style: normal;
@@ -1705,7 +1727,7 @@ input:checked ~ .categor {
     }
 
     .findBattery__input, .findBattery__input::placeholder {
-        color: #A5A2A0;
+        color: #000000;
         font-family: Inter;
         font-size: 16px;
         font-style: normal;
@@ -1743,7 +1765,7 @@ input:checked ~ .categor {
     }
 
     .banner__title {
-        color: #FFF;
+        color: #000;
         font-family: Gotham Pro;
         font-size: 24px;
         font-style: italic;
@@ -1754,7 +1776,7 @@ input:checked ~ .categor {
     }
 
     .banner__subtitle {
-        color: #FFF;
+        color: #000;
         font-family: Inter;
         font-size: 14px;
         font-style: normal;
@@ -1792,7 +1814,7 @@ input:checked ~ .categor {
     }
 
     .productSelect__title {
-        color: #FFF;
+        color: #000;
         font-family: Gotham Pro;
         font-size: 24px;
         font-style: italic;
@@ -1816,7 +1838,7 @@ input:checked ~ .categor {
         max-width: 342px;
         height: 55px;
         flex-shrink: 0;
-        color: #FFF;
+        color: #000;
         font-family: Gotham Pro;
         font-size: 16px;
         font-style: normal;
@@ -1829,7 +1851,7 @@ input:checked ~ .categor {
     }
 
     .bestProduct__title {
-        color: #FFF;
+        color: #000;
         font-family: Gotham Pro;
         font-size: 28px;
         font-style: italic;
@@ -1839,7 +1861,7 @@ input:checked ~ .categor {
     }
 
     .bestProduct__subtitle {
-        color: #FFF;
+        color: #000;
         text-align: center;
         font-family: Inter;
         font-size: 20px;
@@ -1858,6 +1880,7 @@ input:checked ~ .categor {
     .products {
         justify-content: center;
         gap: 24px;
+        width: 90vw;
     }
 
     .product {
@@ -1869,6 +1892,7 @@ input:checked ~ .categor {
         justify-content: space-between;
         padding: 20px;
         flex-wrap: wrap;
+        gap: 10px;
     }
 
 
@@ -1876,6 +1900,7 @@ input:checked ~ .categor {
         width: 129px;
         height: 129px;
         flex-shrink: 0;
+        border-radius: 10px;
     }
 
     .product__content {
@@ -1884,7 +1909,7 @@ input:checked ~ .categor {
     }
 
     .product__title {
-        color: #000;
+        color: black;
         font-family: Inter;
         font-size: 12px;
         font-style: normal;
@@ -1893,7 +1918,7 @@ input:checked ~ .categor {
     }
 
     .product__price {
-        color: #000;
+        color: black;
         font-family: Inter;
         font-size: 20px;
         font-style: normal;
@@ -1902,7 +1927,7 @@ input:checked ~ .categor {
     }
 
     .product__is {
-        color: #000;
+        color: black;
         font-family: Inter;
         font-size: 10px;
         font-style: normal;
@@ -1923,7 +1948,7 @@ input:checked ~ .categor {
     }
 
     .block__title {
-        color: #FFF;
+        color: #000;
         font-family: Gotham Pro;
         font-size: 28px;
         font-style: italic;
@@ -1941,6 +1966,7 @@ input:checked ~ .categor {
     .action__item {
         padding: 20px 32px;
         max-width: 342px;
+
         width: 100%;
         height: auto;
         flex-shrink: 0;
@@ -1949,7 +1975,7 @@ input:checked ~ .categor {
     }
 
     .action__title {
-        color: #FFF;
+        color: white !important;
         font-family: Gotham Pro;
         font-size: 28px;
         font-style: italic;
@@ -1963,7 +1989,6 @@ input:checked ~ .categor {
     }
 
     .action__img {
-        width: 154px;
         height: 110px;
         flex-shrink: 0;
         display: flex;
@@ -1975,12 +2000,11 @@ input:checked ~ .categor {
     }
 
     .action__img img {
-        width: 100%;
         height: 100%;
     }
 
     .action__subtitle {
-        color: #FFF;
+        color: #fff;
         font-family: Inter;
         font-size: 16px;
         font-style: normal;
@@ -1989,7 +2013,7 @@ input:checked ~ .categor {
     }
 
     .action__text {
-        color: #FFF;
+        color: #fff;
         font-family: Inter;
         font-size: 14px;
         font-style: normal;
@@ -1998,7 +2022,7 @@ input:checked ~ .categor {
     }
 
     .block__title {
-        color: #FFF;
+        color: #000;
         font-family: Gotham Pro;
         font-size: 28px;
         font-style: italic;
@@ -2034,7 +2058,7 @@ input:checked ~ .categor {
     }
 
     .about__title {
-        color: #FFF;
+        color: #000;
         font-family: Gotham Pro;
         font-size: 28px;
         font-style: italic;
@@ -2043,7 +2067,7 @@ input:checked ~ .categor {
     }
 
     .about__subtitle {
-        color: #FFF;
+        color: #000;
         font-family: Inter;
         font-size: 24px;
         font-style: normal;
@@ -2053,7 +2077,7 @@ input:checked ~ .categor {
     }
 
     .about__text {
-        color: #FFF;
+        color: #000;
         font-family: Inter;
         font-size: 14px;
         font-style: normal;
@@ -2070,7 +2094,7 @@ input:checked ~ .categor {
     }
 
     .news__title {
-        color: #FFF;
+        color: #000;
         font-family: Inter;
         font-size: 16px;
         font-style: normal;
@@ -2079,7 +2103,7 @@ input:checked ~ .categor {
     }
 
     .news__date {
-        color: #FFF;
+        color: #000;
         font-family: Inter;
         font-size: 14px;
         font-style: normal;
@@ -2188,7 +2212,7 @@ input:checked ~ .categor {
     }
 
     .shops__adress {
-        color: #FFF;
+        color: #000;
         font-family: Inter;
         font-size: 20px;
         font-style: normal;
@@ -2197,7 +2221,7 @@ input:checked ~ .categor {
     }
 
     .shops__phone {
-        color: #FFF;
+        color: #000;
         font-family: Inter;
         font-size: 16px;
         font-style: normal;
@@ -2212,7 +2236,7 @@ input:checked ~ .categor {
 
     .shops__day {
         width: 65px;
-        color: #FFF;
+        color: #000;
         font-family: Inter;
         font-size: 16px;
         font-style: normal;
@@ -2232,7 +2256,7 @@ input:checked ~ .categor {
     }
 
     .shop__time {
-        color: #FFF;
+        color: #000;
         font-family: Inter;
         font-size: 16px;
         font-style: normal;
@@ -2251,7 +2275,7 @@ input:checked ~ .categor {
     }
 
     .footer__title {
-        color: #FFF;
+        color: #000;
         font-family: Gotham Pro;
         font-size: 28px;
         font-style: normal;
@@ -2260,7 +2284,7 @@ input:checked ~ .categor {
     }
 
     .footer__menu-item {
-        color: #FFF;
+        color: #000;
         font-family: Inter;
         font-size: 16px;
         font-style: normal;
@@ -2288,7 +2312,7 @@ input:checked ~ .categor {
     }
 
     .footer__number {
-        color: #FFF;
+        color: #000;
         font-family: Inter;
         font-size: 20px;
         font-style: normal;
@@ -2302,7 +2326,8 @@ input:checked ~ .categor {
     }
 
     .footer__adress {
-        color: #FFF;
+        color: #fff;
+
         font-family: Inter;
         font-size: 16px;
         font-style: normal;
@@ -2312,7 +2337,7 @@ input:checked ~ .categor {
     }
 
     .footer__mail {
-        color: #FFF;
+        color: #fff;
         font-family: Inter;
         font-size: 16px;
         font-style: normal;
@@ -2325,7 +2350,7 @@ input:checked ~ .categor {
     }
 
     .footer__copyrigth {
-        color: #FFF;
+        color: #fff !important;
         font-family: Inter;
         font-size: 16px;
         font-style: normal;
@@ -2364,14 +2389,14 @@ input:checked ~ .categor {
         height: 0;
         width: 100%;
         padding: 24px 20px;
-        background-color: #000;
+        background-color: white;
         overflow-y: hidden;
         opacity: 0;
         transition: opacity 1s;
     }
 
     input#hum:checked ~ .hum__block {
-        background-color: #000;
+        background-color: white;
         z-index: 3;
         opacity: 1;
         height: 100vh;
@@ -2391,7 +2416,7 @@ input:checked ~ .categor {
         margin-top: 30px;
         height: 57px;
         background: #FFF200;
-        color: #000;
+        color: white;
         font-family: Inter;
         font-size: 20px;
         font-style: normal;
@@ -2406,7 +2431,7 @@ input:checked ~ .categor {
         width: 100%;
         height: 80px;
         opacity: 0.5;
-        color: #FFF;
+        color: #000;
         font-family: Inter;
         font-size: 20px;
         font-style: normal;
@@ -2444,7 +2469,7 @@ input:checked ~ .categor {
         padding: 10px 24px;
         display: flex;
         justify-content: center;
-        color: #FFF;
+        color: #fff;
         font-family: Inter;
         font-size: 16px;
         font-style: normal;
@@ -2464,7 +2489,7 @@ input:checked ~ .categor {
     }
 
     .custom-select-1__single-value.css-1dimb5e-singleValue {
-        color: #FFF;
+        color: #000;
         font-family: Inter;
         font-size: 16px;
         font-style: normal;
@@ -2536,7 +2561,7 @@ input:checked ~ .categor {
 
 @media (max-width: 500px) {
     .cart{
-        width: 90vw !important;
+        max-width: 90vw !important;
         margin: 0;
     }
 }
@@ -2559,7 +2584,7 @@ input:checked ~ .categor {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 90vw;
+    max-width: 90vw;
     height: 80%;
 }
 
@@ -2572,7 +2597,7 @@ input:checked ~ .categor {
 
 
 .order__message{
-    color: #000;
+    color: white;
     font-family: Inter;
     font-size: 16px;
     font-style: normal;
@@ -2588,4 +2613,45 @@ input:checked ~ .categor {
     height: 50px;
     position: absolute;
     margin-top: 220px;
+}
+
+.modal__product-content{
+    display: flex;
+    justify-content: space-between;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.product__btn-modal, .product__btn-close {
+    cursor: pointer;
+    color: black;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-radius: 10px;
+    background: #FFF200;
+    height: 48px;
+    margin-top: 20px;
+
+}
+
+.product__btn-close{
+    background: none;
+    border: 1px solid red;
+    margin-top: 0;
+}
+
+.product__content-modal {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
