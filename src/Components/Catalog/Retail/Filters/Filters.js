@@ -69,9 +69,14 @@ const Filters = ({ filterOptions, isMobile, selectedFilters, onResetFilters, onF
             />
             <CapacityFilter
                 options={filterOptions.capacity_ah}
-                selectedValue={selectedFilters.capacity_ah}
+                selectedValue={{
+                    min_capacity_ah: selectedFilters.min_capacity_ah,
+                    max_capacity_ah: selectedFilters.max_capacity_ah
+                }}
                 onFilterChange={handleFilterChange}
             />
+
+
             <LengthFilter
                 options={filterOptions.length_mm}
                 selectedValue={selectedFilters.length_mm}

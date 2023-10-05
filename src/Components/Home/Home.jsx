@@ -9,6 +9,7 @@ import zhumabaev from '../../assets/img/shops/shop__zhumabaev.webp'
 import shop4 from '../../assets/img/shops/shop_4.jpeg'
 import shop5 from '../../assets/img/shops/shop_5.jpeg'
 import zhambyl from '../../assets/img/shops/shop_2.webp'
+import koksh from '../../assets/img/shops/koksh.png'
 import {Link} from "react-router-dom";
 import Find from "./Find/Find";
 import nophoto from '../../assets/img/no_photo.webp'
@@ -152,7 +153,7 @@ const Home = () => {
             <a name='map'></a>
 
             <div className="container">
-                <div className="block__title">Наши магазины в Петропавловске</div>
+                <div className="block__title">Наши магазины</div>
                 <div className="shops">
                     <div className="shops__item">
                         <div className="shops__top">
@@ -168,7 +169,7 @@ const Home = () => {
                             </div>
                         </div>
                         <div className="shops__content">
-                            <div className="shops__adress">Улица Жамбыла Жабаева, 262</div>
+                            <div className="shops__adress">г. Петропавловск Улица Жамбыла Жабаева, 262</div>
                             <div className="shops__phone">+7‒705‒344‒70‒49</div>
                             <div className="shop">
                                 <div className="shops__days shops__days-time">
@@ -197,7 +198,7 @@ const Home = () => {
                             </div>
                         </div>
                         <div className="shops__content">
-                            <div className="shops__adress">Улица Магжана Жумабаева, 107</div>
+                            <div className="shops__adress">г. Петропавловск Улица Магжана Жумабаева, 107</div>
                             <div className="shops__phone">+7‒705‒344‒70‒49</div>
                             <div className="shop">
                                 <div className="shops__days shops__days-time">
@@ -225,7 +226,7 @@ const Home = () => {
                             </div>
                         </div>
                         <div className="shops__content">
-                            <div className="shops__adress">Улица Ярослава Гашека, 27</div>
+                            <div className="shops__adress">г. Петропавловск Улица Ярослава Гашека, 27</div>
                             <div className="shops__phone">+7‒705‒344‒70‒49</div>
                             <div className="shop">
                                 <div className="shops__days shops__days-time">
@@ -256,15 +257,19 @@ const Home = () => {
                             </div>
                         </div>
                         <div className="shops__content">
-                            <div className="shops__adress">Новоишимское, ул Аблай хана 14</div>
+                            <div className="shops__adress">с. Новоишимское, ул Аблай хана 14</div>
                             <div className="shops__phone">+7 7153 521 640</div>
                             <div className="shop">
                                 <div className="shops__days shops__days-time">
                                     <div className="shops__day">Пн - Пт:</div>
+                                    <div className="shop__time">9:00 - 18:00</div>
+                                </div>
+                                <div className="shops__days">
+                                    <div className="shops__day">Cб:</div>
                                     <div className="shop__time">9:00 - 13:00</div>
                                 </div>
                                 <div className="shops__days">
-                                    <div className="shops__day">Cб - Вс:</div>
+                                    <div className="shops__day">Вс:</div>
                                     <div className="shop__time">выходной</div>
                                 </div>
                             </div>
@@ -284,20 +289,53 @@ const Home = () => {
                             </div>
                         </div>
                         <div className="shops__content">
-                            <div className="shops__adress">Тайынша, пер. Центральный д.7Б</div>
+                            <div className="shops__adress">г. Тайынша, пер. Центральный д.7Б</div>
                             <div className="shops__phone">+7 71536 21 788</div>
                             <div className="shop">
                                 <div className="shops__days shops__days-time">
                                     <div className="shops__day">Пн - Пт:</div>
+                                    <div className="shop__time">9:00 - 18:00</div>
+                                </div>
+                                <div className="shops__days">
+                                    <div className="shops__day">Cб:</div>
                                     <div className="shop__time">9:00 - 13:00</div>
                                 </div>
                                 <div className="shops__days">
-                                    <div className="shops__day">Cб - Вс:</div>
+                                    <div className="shops__day">Вс:</div>
                                     <div className="shop__time">выходной</div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <div className="shops__item">
+                        <div className="shops__top">
+                            <div className="shops__img">
+                                <img src={koksh} alt="shop image"/>
+                            </div>
+                            <div className="shops__link">
+                                <img src={link} alt="link"/>
+                                <br/>
+                                <p>
+                                    Показать <br/> на карте
+                                </p>
+                            </div>
+                        </div>
+                        <div className="shops__content">
+                            <div className="shops__adress">г. Кокшетау ул. О. Куанышева, 170/1</div>
+                            <div className="shops__phone">+7 747 510 84 49</div>
+                            <div className="shop">
+                                <div className="shops__days shops__days-time">
+                                    <div className="shops__day">Пн - Пт:</div>
+                                    <div className="shop__time">9:00 - 19:00</div>
+                                </div>
+                                <div className="shops__days">
+                                    <div className="shops__day">Cб - Вс:</div>
+                                    <div className="shop__time">10:00 - 17:00</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
