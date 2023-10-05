@@ -2586,6 +2586,7 @@ input:checked ~ .categor {
     align-items: center;
     max-width: 90vw;
     height: 80%;
+    color: #000;
 }
 
 .order__title{
